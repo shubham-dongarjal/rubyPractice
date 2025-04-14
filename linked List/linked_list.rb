@@ -14,14 +14,14 @@ class Node
   
     def append(value)
       new_node = Node.new(value)
-      if @head.nil?
-        @head = new_node
+      if @head == nil
+          @head = new_node
       else
-        current = @head
-        while current.next != nil
-          current = current.next
-        end
-        current.next = new_node
+          current = @head
+          while current.next != nil
+              current = current.next 
+          end
+          current.next = new_node
       end
     end
   
@@ -31,17 +31,21 @@ class Node
       @head = new_node
     end
   
-    def insert_at(index, value)
-      return prepend(value) if index == 0
-  
+    def insert_at(index,value)
+      if index == 0
+          return prepend(value)
+      end
       new_node = Node.new(value)
       current = @head
-      (index - 1).times do
-        return if current.nil?
-        current = current.next
+      (index - 1).times do 
+          if current == nil
+              return
+          end
+          current = current.next
       end
-  
-      return if current.nil?
+      if current == nil
+          return
+      end
       new_node.next = current.next
       current.next = new_node
     end
@@ -67,8 +71,8 @@ class Node
     def show
       current = @head
       while current
-        print "#{current.value} -> "
-        current = current.next
+          print "#{current.value} -> "
+          current = current.next
       end
       puts "nil"
     end
@@ -107,6 +111,8 @@ puts "Has 15? #{list.includes?(15)}"
 
 list.delete(10)
 list.show
+
+
 
 
   
