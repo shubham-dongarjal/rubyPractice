@@ -1,5 +1,5 @@
 class Node
-    attr_accessor :value, :next
+    attr_accessor :value, :nextcxjv
   
     def initialize(value)
       @value = value
