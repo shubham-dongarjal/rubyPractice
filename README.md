@@ -1,4 +1,4 @@
-'''erDiagram
+erDiagram
     USER ||--o{ POST : writes
     USER ||--o{ COMMENT : posts
     USER ||--o{ SUBSCRIPTION : subscribes_to
@@ -43,4 +43,4 @@
         int UserId
         int CategoryId
         datetime SubscribedAt
-    }'''
+    }
